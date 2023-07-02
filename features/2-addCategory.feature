@@ -6,7 +6,7 @@ Feature: Testing the category functionality in kasirAja
         When I click on menu kategori
         When I click on button tambah
         When I input nama kategori "<namaKategori>" and deskripsi "<deskripsi>"
-        When I click button simpan
+        When I click on button simpan
         Then I must see a successful message
 
         Examples:

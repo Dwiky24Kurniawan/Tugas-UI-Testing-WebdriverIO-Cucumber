@@ -13,16 +13,11 @@ When('I input email {string} and password {string}', async function (email, pass
     await LoginPage.passwordTextfield.setValue(password);
 });
 
-When('I click button login', async () => {
+When('I click on button login', async () => {
     await LoginPage.loginButton.click();
 })
 
-// Then('I must remain on the login page displaying a message {string}', async function (errorMessageLogin) {
-//     await expect(LoginPage.errorMessage).toExist();
-//     await expect(LoginPage.errorMessage).toHaveTextContaining(errorMessageLogin);
-// });
-
-Then('I should see a message saying {string}', async function (message) {
+Then('I must see a message saying {string}', async function (message) {
     await expect(LoginPage.errorMessage).toExist();
     await expect(LoginPage.errorMessage).toHaveTextContaining(message);
 })

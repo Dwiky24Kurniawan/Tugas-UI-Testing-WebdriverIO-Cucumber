@@ -27,7 +27,7 @@ When('I input nama kategori {string} and deskripsi {string}', async function (na
     await CategoryPage.deskripsiTextfield.setValue(deskripsi);
 });
 
-When('I click button simpan', async () => {
+When('I click on button simpan', async () => {
     await CategoryPage.buttonSimpan.click();
 })
 

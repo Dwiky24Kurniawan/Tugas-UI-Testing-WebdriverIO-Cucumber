@@ -3,8 +3,8 @@ Feature: Testing the login functionality in kasirAja
     Scenario Outline: I want to negative test the login functionality
         Given I am on the login page
         When I input email "<email>" and password "<password>"
-        And I click button login
-        Then I should see a message saying "<message>"
+        And I click on button login
+        Then I must see a message saying "<message>"
 
         Examples:
             | email             | password    | message                                 |
@@ -17,7 +17,7 @@ Feature: Testing the login functionality in kasirAja
     Scenario: I want to positive test the login functionality
         Given I am on the login page
         When I input email "<email>" and password "<password>"
-        And I click button login
+        And I click on button login
         Then I must navigated to dashboard page
 
         Examples:
