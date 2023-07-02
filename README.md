@@ -1,6 +1,6 @@
 # Tugas-UI-Testing-WebdriverIO-Cucumber
 Nama : Dwiky Kurniawan
-- Ini adalah Tugas UI Testing Cypress Kasir Aja Sanbercode
+- Ini adalah Tugas UI Testing WebdriverIO-Cucumber Kasir Aja Sanbercode
 
 How to install
 ```
