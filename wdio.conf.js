@@ -1,3 +1,7 @@
+import fs from 'node:fs/promises'
+// Import the module
+import { generate } from 'multiple-cucumber-html-reporter'
+
 exports.config = {
     //
     // ====================
@@ -124,7 +128,17 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec','cucumberjs-json'],
+    reporters: [
+        // Like this with the default options, see the options below
+        'cucumberjs-json',
+
+        // OR like this if you want to set the folder and the language
+        [ 'cucumberjs-json', {
+                jsonFolder: '.tmp/new/',
+                language: 'en',
+            },
+        ],
+    ],
 
     //
     // If you are using Cucumber you need to specify the location of your step definitions.
@@ -167,10 +181,7 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      */
     onPrepare: function (config, capabilities) {
-        capabilities: [{
-            // capabilities for local browser web tests
-            browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
-        }]
+        return fs.rm('.tmp/', { recursive: true });
     },
     /**
      * Gets executed before a worker process is spawned and can be used to initialise specific service
@@ -314,7 +325,17 @@ exports.config = {
      * @param {<Object>} results object containing test results
      */
     // onComplete: function(exitCode, config, capabilities, results) {
-    // },
+        onComplete: () => {
+            // Generate the report when it all tests are done
+            generate({
+              // Required
+              // This part needs to be the same path where you store the JSON files
+              // default = '.tmp/json/'
+              jsonDir: '.tmp/json/',
+              reportPath: '.tmp/report/',
+              // for more options see https://github.com/wswebcreation/multiple-cucumber-html-reporter#options
+            });
+    },
     /**
     * Gets executed when a refresh happens.
     * @param {string} oldSessionId session ID of the old session
