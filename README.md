@@ -21,7 +21,7 @@ npm install multiple-cucumber-html-reporter --save-dev
 
 How to run and create report automatically
 ```
-npm run test
+npm run wdio
 ```
 
 How to open report
