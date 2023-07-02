@@ -210,7 +210,7 @@ exports.config = {
      * @param {object}         browser      instance of created browser/device session
      */
     before: function (capabilities, specs) {
-        browser.maximizeWindow().focus()
+        browser.maximizeWindow()
     },
     /**
      * Runs before a WebdriverIO command gets executed.
