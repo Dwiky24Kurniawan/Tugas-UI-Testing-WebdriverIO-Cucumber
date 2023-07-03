@@ -4,10 +4,10 @@ Feature: Testing the login functionality in kasirAja
         Given I am on the login page
         When I input email "<email>" and password "<password>"
         And I click on button login
-        Then I must see a message saying "<message>"
+        Then I must see error message saying "<errorMessage>"
 
         Examples:
-            | email             | password    | message                                 |
+            | email             | password    | errorMessage                                 |
             | tokonya@dwiky.com | tokodwiky   | Kredensial yang Anda berikan salah      |
             |                   | toko24dwiky | \"email\" is not allowed to be empty    |
             | toko@dwiky.com    |             | \"password\" is not allowed to be empty |

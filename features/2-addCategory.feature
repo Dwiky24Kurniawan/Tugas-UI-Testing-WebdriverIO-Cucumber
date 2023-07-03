@@ -7,8 +7,8 @@ Feature: Testing the category functionality in kasirAja
         When I click on button tambah
         When I input nama kategori "<namaKategori>" and deskripsi "<deskripsi>"
         When I click on button simpan
-        Then I must see a successful message
+        Then I must see a successful message "<sukses>" "<ditambahkan>"
 
         Examples:
-            | namaKategori | deskripsi |
-            | PC Gaming    | PC Gaming |
+            | namaKategori | deskripsi | sukses  | ditambahkan      |
+            | PC Gaming    | PC Gaming | success | item ditambahkan |

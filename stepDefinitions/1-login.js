@@ -4,7 +4,7 @@ import DashboardPage from '../POM/dashboardPage';
 
 Given('I am on the login page', async () => {
     await LoginPage.open();
-    await expect(browser).toHaveTitle('kasirAja');
+    await expect(browser).toHaveUrl('https://kasirdemo.belajarqa.com/login');
 
 });
 
@@ -17,11 +17,12 @@ When('I click on button login', async () => {
     await LoginPage.loginButton.click();
 })
 
-Then('I must see a message saying {string}', async function (message) {
+Then('I must see error message saying {string}', async function (errorMessage) {
     await expect(LoginPage.errorMessage).toExist();
-    await expect(LoginPage.errorMessage).toHaveTextContaining(message);
+    await expect(LoginPage.errorMessage).toHaveTextContaining(errorMessage);
 })
 
 Then('I must navigated to dashboard page', async () => {
+    await expect(browser).toHaveUrl('https://kasirdemo.belajarqa.com/dashboard');
     await expect(DashboardPage.textKasirAja).toExist();
 });

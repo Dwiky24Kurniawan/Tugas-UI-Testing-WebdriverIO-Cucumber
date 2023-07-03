@@ -12,6 +12,7 @@ Given('I already login with email {string} and password {string}', async functio
 
 Then ('I redirect to the dashboard page', async () => {
     await expect(browser).toHaveUrl('https://kasirdemo.belajarqa.com/dashboard');
+    await expect(DashboardPage.textKasirAja).toExist();
 });
 
 When('I click on menu kategori', async () => {
@@ -31,7 +32,9 @@ When('I click on button simpan', async () => {
     await CategoryPage.buttonSimpan.click();
 })
 
-Then('I must see a successful message', async () => {
-    await expect(CategoryPage.successMessage).toExist();
-    await expect(CategoryPage.itemDitambahkan).toExist();
+Then('I must see a successful message {string} {string}', async (sukses, ditambahkan) => {
+    await expect(CategoryPage.successMessage).toExist()
+    await expect(CategoryPage.successMessage).toHaveTextContaining(sukses);
+    await expect(CategoryPage.itemDitambahkan).toExist()
+    await expect(CategoryPage.itemDitambahkan).toHaveTextContaining(ditambahkan);
 });
