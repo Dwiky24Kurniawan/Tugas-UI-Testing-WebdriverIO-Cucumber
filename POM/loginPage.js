@@ -2,19 +2,19 @@ import BasePage from './basePage.js';
 
 class LoginPage extends BasePage {
 
-    get emailTextfield () {
+    get emailTextfield() {
         return $('#email')
     }
-    
-    get passwordTextfield () {
+
+    get passwordTextfield() {
         return $('#password')
     }
-    
-    get loginButton () {
+
+    get loginButton() {
         return $('button[type="submit"]')
     }
 
-    get errorMessage () {
+    get errorMessage() {
         return $('div[role="alert"]')
     }
 
@@ -22,11 +22,12 @@ class LoginPage extends BasePage {
         return super.open('https://kasirdemo.belajarqa.com')
     }
 
-    // async validLogin (email, password) {
-    //     await this.emailTextfield.setvalue("toko@dwiky.com")
-    //     await this.passwordTextfield.setvalue("toko24dwiky")
-    //     await this.loginButton.click()
-    // }
+    async validLogin(email, password) {
+        await this.open()
+        await this.emailTextfield.setvalue(email)
+        await this.passwordTextfield.setvalue(password)
+        await this.loginButton.click()
+    }
 
 }
 
