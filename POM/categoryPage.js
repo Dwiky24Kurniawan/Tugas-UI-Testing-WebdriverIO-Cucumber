@@ -14,18 +14,6 @@ class CategoryPage extends BasePage{
         return $('//*[contains(text(),"item ditambahkan")]')
     }
 
-    get itemDihapus(){
-        return $('//*[contains(text(),"item dihapus")]')
-    }
-
-    get searchBox(){
-        return $('.chakra-input.css-2s2hk4')
-    }
-
-    get resultSearch(){
-        return $('//*[@id="root"]/div/div/div[2]/div[2]/div[2]/table/tbody/tr')
-    }
-
     get namaTextfield () {
         return $('#nama')
     }

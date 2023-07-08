@@ -22,6 +22,12 @@ class LoginPage extends BasePage {
         return super.open('https://kasirdemo.belajarqa.com')
     }
 
+    async login(email, password) {
+        await this.emailTextfield.setValue(email);
+        await this.passwordTextfield.setValue(password);
+        await this.loginButton.click();
+    }
+
 }
 
 export default new LoginPage();
