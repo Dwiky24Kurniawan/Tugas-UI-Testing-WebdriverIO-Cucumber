@@ -29,4 +29,4 @@ How to open report
 start .tmp\report\index.html
 ```
 
-Link recorded running program : https://drive.google.com/file/d/13Uoh6wUECvR0jYF2WgCaGwYvzlBLcWYq/view?usp=sharing
+Link screen recording of running program : https://drive.google.com/file/d/13Uoh6wUECvR0jYF2WgCaGwYvzlBLcWYq/view?usp=sharing
