@@ -1,6 +1,6 @@
-Feature: Testing the category functionality in kasirAja
+Feature: Add Category
 
-    Scenario: I want to positive test the category functionality
+    Scenario: TC_002 - Positive Test - Add Category
         Given I already login with email "toko@dwiky.com" and password "toko24dwiky"
         Then I redirect to the dashboard page
         When I click on menu kategori

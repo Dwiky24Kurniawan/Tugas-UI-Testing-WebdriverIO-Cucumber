@@ -1,9 +1,9 @@
-Feature: Testing the login functionality in kasirAja
+Feature: Login
 
     Background:
         Given I am on the login page
 
-    Scenario: I want to negative test the login functionality
+    Scenario: TC_001 - Negative Test - Login with invalid credentials
         When I input email "<email>" and password "<password>"
         And I click on button login
         Then I must see error message saying "<errorMessage>"
@@ -16,7 +16,7 @@ Feature: Testing the login functionality in kasirAja
             | toko@dwiky        | toko24dwiky | \"email\" must be a valid email         |
             |                   |             | \"email\" is not allowed to be empty    |
 
-    Scenario: I want to positive test the login functionality
+    Scenario: TC_002 - Positive Test - Login with valid credentials
         When I input email "<email>" and password "<password>"
         And I click on button login
         Then I must navigated to dashboard page

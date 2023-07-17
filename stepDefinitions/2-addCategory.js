@@ -4,7 +4,7 @@ import DashboardPage from '../POM/dashboardPage';
 import CategoryPage from '../POM/categoryPage';
 
 Given('I already login with email {string} and password {string}', async function (email, password) {
-    await LoginPage.open()
+    await LoginPage.open();
     await LoginPage.emailTextfield.setValue(email);
     await LoginPage.passwordTextfield.setValue(password);
     await LoginPage.loginButton.click();
@@ -33,8 +33,8 @@ When('I click on button simpan', async () => {
 })
 
 Then('I must see a successful message {string} {string}', async (sukses, ditambahkan) => {
-    await expect(CategoryPage.successMessage).toExist()
+    await expect(CategoryPage.successMessage).toExist();
     await expect(CategoryPage.successMessage).toHaveTextContaining(sukses);
-    await expect(CategoryPage.itemDitambahkan).toExist()
+    await expect(CategoryPage.itemDitambahkan).toExist();
     await expect(CategoryPage.itemDitambahkan).toHaveTextContaining(ditambahkan);
 });
